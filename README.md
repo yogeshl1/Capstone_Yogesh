@@ -1,0 +1,4 @@
+Overview
+The Capstone Portfolio project is a centralized platform designed to showcase capstone projects from various departments, offering a comprehensive and visually appealing way to present academic or professional work. This portfolio provides a detailed overview of individual projects, including descriptions, media, and real-time updates, making it an ideal solution for students, departments, or institutions to highlight key accomplishments, innovation, and skills.
+
+The platform features a user-friendly interface with essential functionalities such as user sign-up, sign-in, admin approval of profiles, and user profile management. The Capstone Portfolio allows for easy exploration of projects within each department, providing an excellent resource for potential employers, stakeholders, or evaluators to assess the journey and growth of the creators behind each capstone project.
