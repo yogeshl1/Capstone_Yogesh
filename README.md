@@ -75,3 +75,4 @@ To run this website locally, follow these steps:
 - **JavaScript**: Interactive functionalities.
 
 ## Screenshots
+![Homepage Screenshot](assets/images/image-1.jpg)
