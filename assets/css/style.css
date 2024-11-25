@@ -108,14 +108,14 @@ font-family: "Poppins", sans-serif;
 /* Sign Up */
 .signup-main {
     height: 100vh;
-    background: #fdb414;
+    background: #ffd479;
 }
 .signup-form {
     /* border: 2px solid black; */
     height: 500px;
     padding: 10px;
     border-radius: 6px;
-    box-shadow: 2px 2px 10px 3px #b9871b;
+    box-shadow: 2px 2px 10px 3px #f9c656;
 }
 .signup-form h3 {
     font-weight: 600;
@@ -160,7 +160,7 @@ font-family: "Poppins", sans-serif;
 .home-container,
 .admin {
     height: 100%;
-    background: #fdb414;
+    background: #ffd479;
 }
 .main {
     height: 100vh;
@@ -170,7 +170,7 @@ font-family: "Poppins", sans-serif;
     position: absolute;
     top: 0;
     height: 90px;
-    box-shadow: 2px 2px 10px 2px #b9871b;
+    box-shadow: 2px 2px 10px 2px #f9c656;
 }
 .nav-logo {
     height: 100%;
@@ -202,7 +202,7 @@ font-family: "Poppins", sans-serif;
     height: 280px;
     border-radius: 5px;
     justify-content: flex-start;
-    box-shadow: 2px 2px 10px 2px #b9871b;
+    box-shadow: 2px 2px 10px 2px #f9c656;
 }
 .dept-box img {
     width: 100%;
@@ -235,7 +235,7 @@ font-family: "Poppins", sans-serif;
     margin-top: 6pc;
     padding: 2pc 0;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px 2px #b9871b;
+    box-shadow: 2px 2px 10px 2px #f9c656;
 }
 .profile-img,
 .profile-det {
@@ -250,7 +250,7 @@ font-family: "Poppins", sans-serif;
     border-radius: 10px;
     margin-top: 20px;
     padding: 10px 0;
-    box-shadow: 2px 2px 10px 2px #b9871b;
+    box-shadow: 2px 2px 10px 2px #f9c656;
 }
 
 /* Admin Page */
@@ -264,7 +264,7 @@ font-family: "Poppins", sans-serif;
     padding: 15px;
     margin-top: 15px;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px 3px #b9871b;
+    box-shadow: 2px 2px 10px 3px #f9c656;
 }
 .admin-table h3 {
     color: #da2128;
