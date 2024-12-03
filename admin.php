@@ -1,27 +1,24 @@
 <?php
-include('db_config.php');
+include('config.php');
 
-if (isset($_GET['user_id']) && isset($_GET['action'])) {
-    $user_id = $_GET['user_id'];
-    $action = $_GET['action'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user_id = $_POST['user_id'];
+    $action = $_POST['action']; // Accept or Reject
 
-    if ($action == 'approve') {
-        $update_query = "UPDATE users SET status='approved' WHERE id='$user_id'";
-    } else if ($action == 'reject') {
-        $update_query = "UPDATE users SET status='rejected' WHERE id='$user_id'";
-    }
+    $status = ($action == 'Accept') ? 'Active' : 'Rejected';
 
-    if (mysqli_query($conn, $update_query)) {
-        echo "Account updated successfully!";
+    $sql = "UPDATE users SET status = '$status' WHERE id = $user_id";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('User status updated successfully!'); window.location.href = 'admin.php';</script>";
     } else {
         echo "Error: " . mysqli_error($conn);
     }
 }
+
+$sql = "SELECT * FROM users WHERE status = 'Pending'";
+$result = mysqli_query($conn, $sql);
 ?>
-
-<!-- <a href="admin.php?user_id=1&action=approve">Approve</a>
-<a href="admin.php?user_id=1&action=reject">Reject</a> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,71 +38,28 @@ if (isset($_GET['user_id']) && isset($_GET['action'])) {
                     <h3>New Accounts</h3>
                     <table class="col-100">
                         <tr>
+                            <th>ID</th>
                             <th>Full Name</th>
                             <th>Email</th>
                             <th>Action</th>
                         </tr>
+                        <?php while ($row = mysqli_fetch_assoc($result)): ?>
                         <tr>
-                            <td>Nick</td>
-                            <td>nick@gmail.com</td>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['first_name']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
                             <td>
-                                <form action="">
-                                    <a href="admin.php?user_id=1&action=approve">Approve</a>
-                                    <a href="admin.php?user_id=1&action=reject">Reject</a>
-                                    <!-- <input type="button" value="Accept" id="accept">
-                                    <input type="button" value="Reject" id="reject"> -->
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                    <button type="submit" name="action" id="accept" value="Accept">Accept</button>
+                                </form>
+                                <form method="POST" style="display: inline;">
+                                    <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                    <button type="submit" name="action" id="reject" value="Reject">Reject</button>
                                 </form>
                             </td>
                         </tr>
-                        <tr>
-                            <td>test</td>
-                            <td>test@gmail.com</td>
-                            <td>
-                                <form action="">
-                                    <input type="button" value="Accept" id="accept">
-                                    <input type="button" value="Reject" id="reject">
-                                </form>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="admin-request col-100">
-                    <h3>Approved Accounts</h3>
-                    <table class="col-100">
-                        <tr>
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr>
-                            <td>Nick</td>
-                            <td>nick@gmail.com</td>
-                            <td>Approved</td>
-                        </tr>
-                        <tr>
-                            <td>test</td>
-                            <td>test@gmail.com</td>
-                            <td>Rejected</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="admin-request col-100">
-                    <h3>Projects Uploaded</h3>
-                    <table class="col-100">
-                        <tr>
-                            <th>Project Name</th>
-                            <th>Uploaded By</th>
-                            <th>User Email</th>
-                            <th>Department</th>
-                        </tr>
-                        <tr>
-                            <td>Test Project</td>
-                            <td>Testing Name</td>
-                            <td>testing@gmail.com</td>
-                            <td>Test123</td>
-                        </tr>
+                        <?php endwhile; ?>
                     </table>
                 </div>
             </div>
