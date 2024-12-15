@@ -13,7 +13,7 @@
             <div class="navigation col-100">
                 <div class="navigation-main col-100 common">
                     <div class="nav-logo col-100 common align">
-                        <a href="index.html"><img src="assets/images/logo.png" alt="logo"></a>
+                        <a href=""><img src="assets/images/logo.png" alt="logo"></a>
                     </div>
                     <!--<div class="nav-links common-even align col-80">-->
                     <!--    <a href="signup.php">Departments</a>-->
@@ -24,7 +24,7 @@
             </div>
             <div class="home col-100 common align">
                 <div class="home-main col-100 common align flex-col">
-                    <h2 data-aos="zoom-out" data-aos-duration="1000">Welcome to UMBC Portfolio</h2>
+                    <h2 data-aos="zoom-out" data-aos-duration="1000">Welcome to UMBC Capstone Portfolio</h2>
                     <a href="signup.php">Get Started</a>
                 </div>
             </div>            

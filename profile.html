@@ -1,3 +1,19 @@
+<?php
+// Start the session to access user details
+session_start();
+
+// Check if user is logged in (session contains user details)
+if (!isset($_SESSION['user_email']) || !isset($_SESSION['user_name'])) {
+    // Redirect to login page if not logged in
+    header("Location: signin.php");
+    exit();
+}
+
+// Retrieve user details from session
+$user_name = $_SESSION['user_name'];
+$user_email = $_SESSION['user_email'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +25,7 @@
 <body>
     <div class="home-container col-100">
         <div class="main col-100 common align flex-col">
+            <!-- Navigation Bar -->
             <div class="navigation col-100">
                 <div class="navigation-main col-100 common">
                     <div class="nav-logo col-20 common align">
@@ -16,11 +33,12 @@
                     </div>
                     <div class="nav-links common-even align col-80">
                         <a href="index.html">Departments</a>
-                        <a href="profile.html" id="navLinks">My Profile</a>
-                        <a href="#">Logout</a>
+                        <a href="profile.php" id="navLinks">My Profile</a>
+                        <a href="logout.php">Logout</a>
                     </div>
                 </div>
             </div>
+            <!-- Profile Section -->
             <div class="profile-main common flex-col col-100">
                 <div class="profile col-100 common">
                     <div class="profile-img common align col-40">
@@ -28,9 +46,9 @@
                     </div>
                     <div class="profile-det common flex-col col-60">
                         <h3>Full Name</h3>
-                        <p>Testing Name</p><br>
+                        <p><?php echo htmlspecialchars($user_name); ?></p><br>
                         <h3>Email</h3>
-                        <p>testing@gmail.com</p>
+                        <p><?php echo htmlspecialchars($user_email); ?></p>
                     </div>
                 </div>
                 <div class="myprojects common col-100">

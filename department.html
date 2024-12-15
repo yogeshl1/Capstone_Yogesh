@@ -3,7 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departments</title>
+    <title>Department | Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="home-container col-100">
+        <div class="navigation-main col-100 common-bet align">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Logo">
+            </div>
+            <div id="navLinks" class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="department.html">Departments</a>
+                <a href="profile.html">Profile</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Content -->
+    <div class="departments-main common-around flex-col">
+        <h2 class="common">Department Projects</h2>
+
+        <!-- Add Project Form -->
+        <div class="signup-form col-40">
+            <h3>Add a New Project</h3>
+            <form action="add_project.php" method="POST" class="col-100 common flex-col">
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" name="project_name" required>
+
+                <label for="project-desc">Project Description</label>
+                <textarea id="project-desc" name="project_desc" rows="4" required></textarea>
+
+                <label for="project-deadline">Deadline</label>
+                <input type="date" id="project-deadline" name="project_deadline" required>
+
+                <label for="project-status">Status</label>
+                <select id="project-status" name="project_status" required>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                </select>
+
+                <input type="submit" value="Add Project">
+            </form>
+        </div>
+
+        <!-- Project List -->
+        <div class="department-main common-around flex-row">
+            <!-- Example Project Container -->
+            <div class="dept-box col-30">
+                <img src="assets/images/project_placeholder.jpg" alt="Project Image">
+                <h5>Project Name</h5>
+                <p>Description of the project goes here...</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <div class="dept-box col-30">
+                <img src="assets/images/project_placeholder.jpg" alt="Project Image">
+                <h5>Project Name 2</h5>
+                <p>Another project description...</p>
+                <a href="#">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Departments</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -22,39 +106,8 @@
                     </div>
                 </div>
             </div>
-            <div class="departments common col-100">
-                <div class="departments-main common-bet col-90">
-                    <div class="dept-box common flex-col align" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="assets/images/image-1.jpg" alt="image">
-                        <h5>Department Name</h5>
-                        <a href="department.html">Explore</a>
-                    </div>
-                    <div class="dept-box common flex-col align" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="assets/images/image-2.jpg" alt="image">
-                        <h5>Department Name</h5>
-                        <a href="department.html">Explore</a>
-                    </div>
-                    <div class="dept-box common flex-col align" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="assets/images/image-3.jpg" alt="image">
-                        <h5>Department Name</h5>
-                        <a href="department.html">Explore</a>
-                    </div>
-                    <div class="dept-box common flex-col align" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="assets/images/image-4.jpg" alt="image">
-                        <h5>Department Name</h5>
-                        <a href="department.html">Explore</a>
-                    </div>
-                    <div class="dept-box common flex-col align" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="assets/images/image-5.jpg" alt="image">
-                        <h5>Department Name</h5>
-                        <a href="department.html">Explore</a>
-                    </div>
-                    <div class="dept-box common flex-col align" data-aos="fade-down" data-aos-duration="1000">
-                        <img src="assets/images/image-6.jpg" alt="image">
-                        <h5>Department Name</h5>
-                        <a href="department.html">Explore</a>
-                    </div>
-                </div>
+            <div class="department-main common align col-100">
+                <h3>Department Projects will be shown here</h3>
             </div>
         </div>
     </div>
@@ -64,4 +117,4 @@
         AOS.init();
       </script>
 </body>
-</html>
+</html> -->
